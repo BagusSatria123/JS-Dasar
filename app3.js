@@ -75,6 +75,7 @@ console.log(animals);
 */
 
 //Array Filter
+/*
 const age = [25, 16, 17, 9, 10, 11, 15, 28, 30];
 const filteredAge = age.filter(myFunction);
 
@@ -82,3 +83,133 @@ function myFunction(value) {
   return value >= 17;
 }
 console.log(filteredAge);
+*/
+
+//Objects in javascript
+/*
+const person = {
+  firstName: "Bagus",
+  lastName: "Putra",
+  age: 20,
+  nationality: "Indonesia",
+};
+console.log(person);
+
+const person2 = new Object();
+person2.firstName = "Bagus";
+person2.lastName = "satria";
+person2.age = 20;
+console.log(person2);
+*/
+
+//Accessing value of object
+/*
+// const person = {
+//   firstName: "Bagus",
+//   lastName: "Putra",
+//   age: 20,
+//   nationality: "Indonesia",
+// };
+
+// const personName = person.firstName;
+// const personName = person["firstName"];
+
+// let targetKey = "firstName";
+// const personName = person[targetKey];
+
+const person = {
+  name: {
+    firstName: "Bagus",
+    lastName: "Putra",
+  },
+  age: 20,
+  nationality: "Indonesia",
+};
+const personName = person.name.lastName;
+console.log(personName);
+*/
+
+//Adding and mutating value in object
+/*
+const person = {
+  name: {
+    firstName: "Bagus",
+    lastName: "Putra",
+  },
+  age: 20,
+  nationality: "Indonesia",
+};
+
+person.hairColor = "brown";
+person.name.firstName = "jane";
+person.name.firstNames = "jan0";
+
+console.log(person);
+*/
+
+//Delete property in object
+/*
+const person = {
+  name: {
+    firstName: "Bagus",
+    lastName: "Putra",
+  },
+  age: 20,
+  nationality: "Indonesia",
+};
+
+delete person.nationality;
+console.log(person);
+// console.log(person.nationality);
+*/
+
+//Object and keys assign
+/*
+//Object Keys
+const objects = { a: 1, b: 2, c: 4 };
+console.log(Object.keys(objects));
+
+//Object assign (Menggabungkan)
+const objects1 = { a: 1, b: 2, c: 4 };
+const objects2 = { d: 6, e: 5 };
+
+Object.assign(objects1, objects2);
+console.log(objects1);
+*/
+
+//Array of object
+/*
+const todos = [
+  {
+    text: "Ini adalah tugas 1",
+    isCompleted: false,
+  },
+  {
+    text: "Ini adalah tugas 2",
+    isCompleted: true,
+  },
+  {
+    text: "Ini adalah tugas 3",
+    isCompleted: false,
+  },
+  {
+    text: "Ini adalah tugas 4",
+    isCompleted: true,
+  },
+];
+
+// const uncompletedTasks = todos.filter(myFunction);
+
+// function myFunction(value) {
+//   if (value.isCompleted === false) {
+//     return value;
+//   }
+// }
+
+const uncompletedTasks = todos.filter((value) => {
+  if (value.isCompleted === true) {
+    return value;
+  }
+});
+console.log(uncompletedTasks);
+*/
