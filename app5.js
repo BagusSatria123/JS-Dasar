@@ -9,6 +9,7 @@ const clearButton = document.querySelector("#clear-todos");
 todoForm.addEventListener("submit", addTodo);
 todoList.addEventListener("click", deleteTodo);
 clearButton.addEventListener("click", clearTodos);
+filterInput.addEventListener("keyup", filterTodos);
 
 function addTodo(e) {
   //e = event
@@ -23,7 +24,7 @@ function addTodo(e) {
 
     // Menambahkan class pada element li
     li.className =
-      "list-group-item d-flex justify-content-between align-items-center mb-1";
+      "todo-item list-group-item d-flex justify-content-between align-items-center mb-1";
 
     // Menambahkan children ke dalam element li
     li.appendChild(document.createTextNode(todoInput.value)); //appendchild ibarat sebuah box kita taruh sebelahnya
@@ -67,4 +68,20 @@ function deleteTodo(e) {
 
 function clearTodos() {
   todoList.innerHTML = "";
+}
+
+function filterTodos(e) {
+  const filterText = e.target.value.toLowerCase();
+  const todoItems = document.querySelectorAll(".todo-item");
+
+  todoItems.forEach((item) => {
+    const itemText = item.firstChild.textContent.toLowerCase();
+
+    if (itemText.indexOf(filterText) != -1) {
+      item.setAttribute("style", "display: block;");
+    } else {
+      item.setAttribute("style", "display: none !important;");
+    }
+  });
+  console.log(filterTodos);
 }
